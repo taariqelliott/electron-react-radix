@@ -8,68 +8,14 @@ import {
   TextField,
   Theme,
 } from "@radix-ui/themes";
+import {
+  AccentColor,
+  accentColorHexMap,
+  defaultPlaylistPath,
+} from "./theme/constants";
 import { KeyboardEvent, useEffect, useState } from "react";
-
-const defaultPlaylistPath =
-  "playlist?list=PLrqfjuuSrioScDXZuD1Lxn4uRwf5Eawne&si=4ifrY_Epi5xwf5tk";
-
-enum AccentColor {
-  gray = "gray",
-  gold = "gold",
-  bronze = "bronze",
-  brown = "brown",
-  yellow = "yellow",
-  amber = "amber",
-  orange = "orange",
-  tomato = "tomato",
-  red = "red",
-  ruby = "ruby",
-  crimson = "crimson",
-  pink = "pink",
-  plum = "plum",
-  purple = "purple",
-  violet = "violet",
-  iris = "iris",
-  indigo = "indigo",
-  blue = "blue",
-  cyan = "cyan",
-  teal = "teal",
-  jade = "jade",
-  green = "green",
-  grass = "grass",
-  lime = "lime",
-  mint = "mint",
-  sky = "sky",
-}
-
-const accentColorHexMap = {
-  gray: "#696e77",
-  gold: "#978365",
-  bronze: "#a18072",
-  brown: "#ad7f58",
-  yellow: "#ffea00",
-  amber: "#ffc100",
-  orange: "#f66b15",
-  tomato: "#e54d2e",
-  red: "#e5484d",
-  ruby: "#e54566",
-  crimson: "#e93d82",
-  pink: "#d6409f",
-  plum: "#ab4abb",
-  purple: "#8e4ec6",
-  violet: "#6e56cf",
-  iris: "#5b5bd6",
-  indigo: "#3e63dd",
-  blue: "#0090ff",
-  cyan: "#01a2c7",
-  teal: "#14a494",
-  jade: "#27a383",
-  green: "#30a46c",
-  grass: "#46a758",
-  lime: "#bdee63",
-  mint: "#86ead4",
-  sky: "#7ce2fe",
-};
+import "@radix-ui/themes/styles.css";
+import "./theme.config.css";
 
 export default function App() {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
@@ -142,14 +88,13 @@ export default function App() {
           variant="classic"
           radius="large"
           onClick={toggleThemeAppearance}
+          className="--cursor-button"
         >
-          <Flex className="cursor-pointer">
-            {themeAppearance === "dark" ? (
-              <MoonIcon width="40" />
-            ) : (
-              <SunIcon width="40" />
-            )}
-          </Flex>
+          {themeAppearance === "dark" ? (
+            <MoonIcon width="35" />
+          ) : (
+            <SunIcon width="35" />
+          )}
         </Button>
       </Flex>
 
