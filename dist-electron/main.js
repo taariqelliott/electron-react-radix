@@ -17,7 +17,11 @@ function createWindow() {
       preload: path.join(__dirname, "preload.mjs")
     },
     width: 1212,
-    height: 844
+    height: 844,
+    maxWidth: screen.getPrimaryDisplay().workAreaSize.width,
+    maxHeight: screen.getPrimaryDisplay().workAreaSize.height,
+    minWidth: 912,
+    minHeight: 544
   });
   console.log(screen.getPrimaryDisplay().workAreaSize);
   win.webContents.on("did-finish-load", () => {

@@ -113,7 +113,7 @@ export default function App() {
             </Text>
             <RocketIcon color={iconColorHex} />
           </Flex>
-          <Flex direction="column" gap="3">
+          <Flex direction="column">
             <Box maxWidth="100%">
               <TextField.Root
                 id="url-input"
@@ -123,6 +123,7 @@ export default function App() {
                 onKeyDown={handlePlaylistInput}
                 size="3"
                 placeholder="Enter a playlist URL…"
+                className="custom-shadow"
               />
             </Box>
           </Flex>
@@ -147,6 +148,7 @@ export default function App() {
           align="center"
           justify="center"
           width="50%"
+          mb="5px"
         >
           {accentColorOptions.map((color) => (
             <Button

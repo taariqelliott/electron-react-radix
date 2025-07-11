@@ -36,6 +36,10 @@ function createWindow() {
     },
     width: 1212,
     height: 844,
+    maxWidth: screen.getPrimaryDisplay().workAreaSize.width,
+    maxHeight: screen.getPrimaryDisplay().workAreaSize.height,
+    minWidth: 912,
+    minHeight: 544,
   });
 
   console.log(screen.getPrimaryDisplay().workAreaSize);
